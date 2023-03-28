@@ -1,22 +1,28 @@
-import sqlite3 from 'sqlite3';
-import fs from 'fs';
+import mysql from 'mysql2/promise';
 
-const db = new sqlite3.Database(':memory:');
-const sql = fs.readFileSync('./Pop_database/world.sql').toString();
-db.exec(sql);
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'world',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
+});
 
-function getAllCities(req, res) {
-  const query = 'SELECT * FROM city';
+export const databaseService = {
+  async getCities() {
+    const [rows] = await pool.query('SELECT * FROM city ORDER BY Name');
+    return rows;
+  },
 
-  db.all(query, [], (err, rows) => {
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-      return;
-    }
+  async getCity(id) {
+    const [rows] = await pool.query('SELECT * FROM city WHERE ID = ?', [id]);
+    return rows[0];
+  },
 
-    res.render('cities', { cities: rows });
-  });
-}
-
-export { getAllCities };
+  async getCityGallery(id) {
+    const [rows] = await pool.query('SELECT * FROM city_gallery WHERE CityID = ?', [id]);
+    return rows;
+  }
+};

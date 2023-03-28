@@ -1,9 +1,10 @@
-const express = require('express');
-const path = require('path');
-const databaseService = require('./services/databaseService');
-const cityModel = require('./models/city');
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { databaseService } from './services/database.service.mjs';
+
 const app = express();
-const port = 3000;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -11,29 +12,31 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/', async (req, res) => {
-  const cities = await cityModel.getAllCities();
-  res.render('index', { cities });
+  try {
+    const cities = await databaseService.getCities();
+    res.render('index', { cities });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal server error');
+  }
+});
+
+app.get('/cities/:id', async (req, res) => {
+  try {
+    const cityId = parseInt(req.params.id);
+    const city = await databaseService.getCity(cityId);
+    const gallery = await databaseService.getCityGallery(cityId);
+    res.render('city', { city, gallery });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal server error');
+  }
 });
 
 app.get('/about', (req, res) => {
   res.render('about');
 });
 
-app.get('/cities/:id', async (req, res) => {
-  const city = await cityModel.getCityById(req.params.id);
-  res.render('city', { city });
-});
-
-app.get('/cities', async (req, res) => {
-  const cities = await cityModel.getAllCities();
-  res.render('cities', { cities });
-});
-
-app.get('/gallery', (req, res) => {
-  res.render('gallery');
-});
-
-app.listen(port, async () => {
-  await databaseService.connect();
-  console.log(`Server listening at http://localhost:${port}`);
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
 });
