@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { databaseService } from './services/database.service.js';
+import { databaseService } from './services/database.service.mjs';
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
