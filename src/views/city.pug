@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= city.name
+  p Population: #{city.population}
+  img(src=city.image)
+  h2 Gallery
+  each image in city.gallery
+    img(src=image)
