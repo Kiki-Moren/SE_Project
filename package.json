@@ -1,0 +1,15 @@
+{
+    "name": "se_project",
+    "version": "1.0.0",
+    "description": "Population information website",
+    "main": "index.mjs",
+    "scripts": {
+      "start": "node index.mjs"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "pug": "^3.0.2",
+      "sqlite3": "^5.0.2"
+    }
+  }
+  
