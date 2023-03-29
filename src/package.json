@@ -1,21 +1,14 @@
 {
-  "name": "myproject",
+  "name": "se_project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Population information website",
+  "main": "index.mjs",
   "scripts": {
-    "start": "node index.mjs",
-    "dev": "nodemon -e pug,js,mjs,css --exec node index.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "node index.mjs"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "pug": "^3.0.2",
-    "mysql2": "^3.1.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
+      "express": "^4.17.1",
+      "pug": "^3.0.2",
+      "mysql2": "^2.3.0"
   }
 }
