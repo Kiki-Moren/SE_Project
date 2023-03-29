@@ -1,14 +1,13 @@
 {
   "name": "se_project",
   "version": "1.0.0",
-  "description": "Population information website",
-  "main": "index.mjs",
+  "description": "A project for SE",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-      "start": "node index.mjs"
+    "start": "node index.js"
   },
   "dependencies": {
-      "express": "^4.17.1",
-      "pug": "^3.0.2",
-      "mysql2": "^2.3.0"
+    "express": "^4.17.2"
   }
 }

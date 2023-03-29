@@ -1,7 +1,7 @@
 /* Import dependencies */
 import express from "express";
 import mysql from "mysql2/promise";
-import DatabaseService from "./services/database.service.mjs";
+import DatabaseService from "./services/database.service.js";
 
 /* Create express instance */
 const app = express();
