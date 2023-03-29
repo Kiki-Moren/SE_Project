@@ -1,9 +1,0 @@
-extends layout
-
-block content
-  h1 Cities
-  each city in cities
-    div.city
-      h2= city.name
-      p Population: #{city.population}
-      a(href=`/city/${city.id}`) Details
