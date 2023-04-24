@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+  h2 Welcome, #{user.name}!
+  p Your recent searches:
+  ul
+    each search in searches
+      li= search.query
