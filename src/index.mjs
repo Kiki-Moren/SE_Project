@@ -40,11 +40,6 @@ app.get("/ping", (req, res) => {
   res.send("pong");
 });
 
-// Landing route
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
 // Gallery route
 app.get("/gallery", (req, res) => {
   res.render("gallery");
@@ -52,13 +47,22 @@ app.get("/gallery", (req, res) => {
 
 // About route
 app.get("/about", (req, res) => {
-  res.render("about", { title: "Boring about page" });
+  res.render("about", { title: "ABOUT US" });
 });
 
 app.get("/cities", async (req, res) => {
   const [rows, fields] = await db.getCities();
+
+  // Get the alphabet that the user clicked
+  const { alphabet } = req.query;
+
+  // Filter cities based on the alphabet
+  const filteredCities = alphabet
+    ? rows.filter((city) => city.Name.startsWith(alphabet))
+    : rows;
+
   /* Render cities.pug with data passed as plain object */
-  return res.render("cities", { rows, fields });
+  return res.render("cities", { rows: filteredCities, fields, alphabet });
 });
 
 app.get("/cities/:id", async (req, res) => {
@@ -92,6 +96,13 @@ app.get("/api/countries", async (req, res) => {
 });
 
 /* Authentication */
+
+// Logout
+app.post("/api/logout", (req, res) => {
+  req.session.auth = false;
+  req.session.userId = null;
+  res.redirect("/login");
+});
 
 // Register
 app.get("/register", (req, res) => {
@@ -169,3 +180,4 @@ app.post("/api/login", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+

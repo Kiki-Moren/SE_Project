@@ -36,8 +36,9 @@ h2 {
 
 nav {
   display: flex;
+  justify-content: center;
+  gap: 20px;
   align-items: center;
-  gap: 1.5rem;
   padding: 1rem 0rem;
 }
 
@@ -56,4 +57,40 @@ nav a:hover {
 
 .layout-content {
   padding-top: 1.5rem;
+}
+
+.homepage {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.welcome {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.homepage-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.cities-heading, .about-heading, .account-heading {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cities-heading {
+  color: #0066cc;
+}
+
+.about-heading {
+  color: #009933;
+}
+
+.account-heading {
+  color: #ff6600;
 }

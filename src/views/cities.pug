@@ -5,18 +5,41 @@ block head
 
 block content
   h2 Cities
-  table
-    thead
-      th ID
-      th.text-center Country
-      th City
-      th Population
-    tbody
+
+  div(style="background-image: url('https://thumbs.dreamstime.com/b/abstract-medieval-nautical-map-background-old-vintage-159658330.jpg');")
+    .container
+      .alphabet
+        button(data-letter="A") A
+        button(data-letter="B") B
+        button(data-letter="C") C
+        button(data-letter="D") D
+        button(data-letter="E") E
+        button(data-letter="F") F
+        button(data-letter="G") G
+        button(data-letter="H") H
+        button(data-letter="I") I
+        button(data-letter="J") J
+        button(data-letter="K") K
+        button(data-letter="L") L
+        button(data-letter="M") M
+        button(data-letter="N") N
+        button(data-letter="O") O
+        button(data-letter="P") P
+        button(data-letter="Q") Q
+        button(data-letter="R") R
+        button(data-letter="S") S
+        button(data-letter="T") T
+        button(data-letter="U") U
+        button(data-letter="V") V
+        button(data-letter="W") W
+        button(data-letter="X") X
+        button(data-letter="Y") Y
+        button(data-letter="Z") Z
+
       each row, i in rows
-        tr
-          td.fit
-            a(href=`/cities/${i + 1}`) #{i + 1}
-          td.fit #{row.CountryCode}
-          td #{row.Name}
-          - const population = new Intl.NumberFormat().format(row.Population);
-          td.fit.number #{population}
+        - const firstLetter = row.Name[0].toUpperCase()
+        - const population = new Intl.NumberFormat().format(row.Population);
+        .box(data-letter=firstLetter)
+          h2= row.Name
+          p= `Country: ${row.CountryCode}`
+          p= `Population: ${population}`

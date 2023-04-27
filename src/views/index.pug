@@ -1,4 +1,51 @@
 extends layout.pug
 
 block content
-  h2 Hello world!
+  style.
+    body {
+      background-image: url("https://thumbs.dreamstime.com/b/abstract-medieval-nautical-map-background-old-vintage-159658330.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: black;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      margin: 20px 0;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+  div.container
+    a(href="/cities")
+      img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1wx46bwyy7AccucM59JeUbPALO4-f56J-og&usqp=CAU" alt="Cities")
+      h2 Cities
+      p Discover our favorite cities and destinations around the world.
+    a(href="/about")
+      img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBXYOeHyHbcU-DuRUHkuHdCx6EHBR15AtuPQ&usqp=CAU" alt="About")
+      h2 About Us
+      p Learn more about our company and our mission to make travel accessible for everyone.
+    a(href="/account")
+      img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTse3hBvkXzrdaTZaRMXZueZ_GyAgL4ovowLw&usqp=CAU" alt="Account")
+      h2 My Account
+      p Manage your bookings and personal information easily with our account dashboard.
