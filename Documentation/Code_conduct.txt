@@ -1,0 +1,20 @@
+MOODLE:- SOFTWARE ENGINEERING
+PROJECT:- SPRINT 1
+TITLE:- CODE OF CONDUCT
+PROJECT OWNER:-
+SCRUM MANAGER:- KENLEY
+PREPARED BY:- OKIKIOLA ODUNEYE
+              KASSIM ADEWALE
+              KENLEY
+              KENNEDY
+
+THE CODE OF CONDUCT
+
+1. Lateness individuals should not be more than 15mins late for the group meeting. If anyone is found late, they need to buy snacks for each member of the group 
+2. Allocation of task: each group member should complete the task allocated to them on or before the due date given. Failure to do so will be exempted from the submission list.
+3. Communication:- Each group member should openly communicate with one another, frequently reporting to the project manager. Failure to do so after two strikes they will be reported to the lecturer in charge.
+4. Unavailability to attend meetings:- any member of the group that won’t be able to participate in the physical is provided with an online, but if they still can’t make it, a 24hrs notice should be given; otherwise, after 2 strikes, they will be reported to the lecturer in charge 
+5. Respect: Each member should respect each other, be friendly and not disrupt each other; if any member is found having conflict with the other member, they will be given a strike and after 2 strikes, he or she will be reported 
+6. No sharing of code: Any member found sharing code 
+7. Class Attendance:- each member of the group must be present in every class of the Moodle.
+8. Ethical Behavior: All members, including the project manager and product owner, should maintain high ethical standards.

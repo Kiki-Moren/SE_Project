@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+  body(style="background-image: url('https://thumbs.dreamstime.com/b/abstract-medieval-nautical-map-background-old-vintage-159658330.jpg');")
+    h2 Account
+    div #{user.email}
+    form(action="/api/logout", method="POST")
+      button(type="submit") Logout

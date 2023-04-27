@@ -1,0 +1,55 @@
+:root {
+  --clr-box: #f9c74f;
+  --clr-heading: #1d3557;
+  --clr-text: #000000;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  background-color: var(--clr-box);
+  padding: 1rem;
+  margin: 0.5rem;
+  width: calc((100% / 3) - 1rem);
+}
+
+.box h2 {
+  color: var(--clr-heading);
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.box p {
+  color: var(--clr-text);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.alphabet {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.alphabet button {
+  background-color: var(--clr-box);
+  border: none;
+  color: var(--clr-heading);
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.alphabet button:hover {
+  background-color: var(--clr-heading);
+  color: var(--clr-box);
+  cursor: pointer;
+}
+
+.box.hide {
+  display: none;
+}
